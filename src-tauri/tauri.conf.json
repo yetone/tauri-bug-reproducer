@@ -49,7 +49,8 @@
         "height": 600,
         "resizable": true,
         "title": "tauri-bug-reproducer",
-        "width": 800
+        "width": 800,
+        "decorations": false
       }
     ],
     "security": {
