@@ -82,12 +82,5 @@
     "process:allow-exit",
     "app:allow-app-show",
     "app:allow-app-hide"
-  ],
-  "platforms": [
-    "linux",
-    "macOS",
-    "windows",
-    "android",
-    "iOS"
   ]
 }

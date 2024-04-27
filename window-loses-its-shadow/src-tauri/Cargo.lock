@@ -1592,15 +1592,19 @@ checksum = "d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b"
 
 [[package]]
 name = "global-hotkey"
-version = "0.2.4"
+version = "0.5.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "08c12993a445d59000c3994fcd3d179e7da026a4234cc46db652987aa2785e4a"
+checksum = "daf13ae557ac61fa8f6fa949c33616e9680f0f04a9dd0195cd210770ba643f1a"
 dependencies = [
+ "bitflags 2.5.0",
+ "cocoa",
  "crossbeam-channel",
- "keyboard-types 0.6.2",
+ "keyboard-types",
+ "objc",
  "once_cell",
+ "serde",
  "thiserror",
- "windows-sys 0.48.0",
+ "windows-sys 0.52.0",
  "x11-dl",
 ]
 
@@ -2091,17 +2095,6 @@ dependencies = [
 
 [[package]]
 name = "keyboard-types"
-version = "0.6.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0b7668b7cff6a51fe61cdde64cd27c8a220786f399501b57ebe36f7d8112fd68"
-dependencies = [
- "bitflags 1.3.2",
- "serde",
- "unicode-segmentation",
-]
-
-[[package]]
-name = "keyboard-types"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b750dcadc39a09dbadd74e118f6dd6598df77fa01df0cfcdc52c28dece74528a"
@@ -2354,7 +2347,7 @@ dependencies = [
  "crossbeam-channel",
  "dpi",
  "gtk",
- "keyboard-types 0.7.0",
+ "keyboard-types",
  "objc",
  "once_cell",
  "png",
@@ -3967,26 +3960,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "tauri-bug-reproducer"
-version = "0.0.0"
-dependencies = [
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
- "tauri-plugin-clipboard-manager",
- "tauri-plugin-dialog",
- "tauri-plugin-fs",
- "tauri-plugin-global-shortcut",
- "tauri-plugin-http",
- "tauri-plugin-notification",
- "tauri-plugin-os",
- "tauri-plugin-process",
- "tauri-plugin-shell",
- "tauri-plugin-updater",
-]
-
-[[package]]
 name = "tauri-build"
 version = "2.0.0-beta.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4119,8 +4092,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-global-shortcut"
 version = "2.0.0-beta.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2be32cb919ff18e307c9754cbb56e44887119e227e1214a29420b54231f3b989"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#e9977eb2f8e33ce7a52b681c2a5ccd014b98829e"
 dependencies = [
  "global-hotkey",
  "log",
@@ -5132,6 +5104,26 @@ name = "winapi-x86_64-pc-windows-gnu"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+
+[[package]]
+name = "window-loses-its-shadow"
+version = "0.0.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-clipboard-manager",
+ "tauri-plugin-dialog",
+ "tauri-plugin-fs",
+ "tauri-plugin-global-shortcut",
+ "tauri-plugin-http",
+ "tauri-plugin-notification",
+ "tauri-plugin-os",
+ "tauri-plugin-process",
+ "tauri-plugin-shell",
+ "tauri-plugin-updater",
+]
 
 [[package]]
 name = "window-vibrancy"
