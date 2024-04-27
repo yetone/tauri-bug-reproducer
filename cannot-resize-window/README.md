@@ -11,3 +11,10 @@ Cannot change window size on Windows.
 ## Related issue and PR:
 
 https://github.com/tauri-apps/tauri/issues/9023
+
+## How to start
+
+```bash
+pnpm install
+pnpm tauri dev
+```

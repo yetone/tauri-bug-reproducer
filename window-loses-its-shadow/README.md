@@ -2,3 +2,9 @@
 
 When setting the effect for windows on macOS, all windows except the first one will lose their shadows.
 
+## How to start
+
+```bash
+pnpm install
+pnpm tauri dev
+```
