@@ -3,7 +3,7 @@
     "beforeDevCommand": "pnpm dev",
     "beforeBuildCommand": "pnpm build",
     "frontendDist": "../dist",
-    "devUrl": "http://localhost:7000"
+    "devUrl": "http://localhost:5173"
   },
   "bundle": {
     "active": true,
@@ -15,7 +15,6 @@
       "icons/32x32.png",
       "icons/128x128.png",
       "icons/128x128@2x.png",
-      "icons/icon.icns",
       "icons/icon.ico"
     ],
     "windows": {
@@ -39,7 +38,7 @@
       }
     }
   },
-  "productName": "window-loses-its-shadow",
+  "productName": "tauri-bug-reproducer",
   "version": "0.0.0",
   "identifier": "com.tauri.dev",
   "plugins": {},
@@ -49,8 +48,9 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "window-loses-its-shadow",
-        "width": 800
+        "title": "tauri-bug-reproducer",
+        "width": 800,
+        "decorations": false
       }
     ],
     "security": {
