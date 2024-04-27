@@ -50,7 +50,7 @@
         "resizable": true,
         "title": "tauri-bug-reproducer",
         "width": 800,
-        "decorations": false
+        "decorations": true
       }
     ],
     "security": {

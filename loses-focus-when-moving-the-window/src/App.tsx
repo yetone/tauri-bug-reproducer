@@ -8,14 +8,23 @@ function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
 
-  const [isFocused, setIsFocused] = useState(false);
+  const [focusedHistory, setFocusedHistory] = useState<[Date, boolean][]>([])
 
   useEffect(() => {
     const appWindow = getCurrent()
     let unlisten: (() => void) | undefined = undefined
     appWindow
     .onFocusChanged(({ payload: focused }) => {
-      setIsFocused(focused)
+      setFocusedHistory((prev) => {
+        if (prev[0]?.[1] !== focused) {
+          const newFocusedHistory = prev.slice()
+          if (newFocusedHistory.length > 10) {
+            newFocusedHistory.pop()
+          }
+          return [[new Date(), focused], ...newFocusedHistory]
+        }
+        return prev
+      })
     })
     .then((cb) => {
       unlisten = cb
@@ -42,13 +51,16 @@ function App() {
 
       <div className="container">
 
-      {isFocused ? (
-        <h1>Is focused</h1>
-        ) : (
-          <h1 style={{
-            color: 'red',
-          }}>Is not focused</h1>
-        )}
+      <h1>Focused History</h1>
+      <ul>
+        {focusedHistory.map(([date, isFocused], idx) => isFocused ? (
+          <li key={idx}>[{date.toISOString()}] {idx === 0 ? 'Current: ' : ''}Is focused</li>
+          ) : (
+            <li key={idx} style={{
+              color: 'red',
+            }}>[{date.toISOString()}] Is not focused</li>
+          ))}
+      </ul>
 
         <h1>Welcome to Tauri!</h1>
 
