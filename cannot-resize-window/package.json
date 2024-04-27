@@ -1,5 +1,5 @@
 {
-  "name": "tauri-bug-reproducer",
+  "name": "cannot-resize-window",
   "private": true,
   "version": "0.0.0",
   "type": "module",

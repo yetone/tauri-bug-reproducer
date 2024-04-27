@@ -1,11 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/tauri";
+import { getCurrent } from '@tauri-apps/api/webviewWindow'
+import { invoke } from "@tauri-apps/api/core";
 import "./app.css";
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
+
+  const [isFocused, setIsFocused] = useState(false);
+
+  useEffect(() => {
+    const appWindow = getCurrent()
+    let unlisten: (() => void) | undefined = undefined
+    appWindow
+    .onFocusChanged(({ payload: focused }) => {
+      setIsFocused(focused)
+    })
+    .then((cb) => {
+      unlisten = cb
+    })
+    return () => {
+      unlisten?.()
+    }
+  }, [])
+
 
   async function greet() {
     setGreetMsg(await invoke("greet", { name }));
@@ -22,6 +41,14 @@ function App() {
       </div>
 
       <div className="container">
+
+      {isFocused ? (
+        <h1>Is focused</h1>
+        ) : (
+          <h1 style={{
+            color: 'red',
+          }}>Is not focused</h1>
+        )}
 
         <h1>Welcome to Tauri!</h1>
 

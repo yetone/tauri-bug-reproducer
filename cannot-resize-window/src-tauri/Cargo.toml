@@ -1,5 +1,5 @@
 [package]
-name = "tauri-bug-reproducer"
+name = "cannot-resize-window"
 version = "0.0.0"
 description = "A Tauri App"
 authors = ["you"]
