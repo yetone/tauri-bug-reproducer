@@ -7,7 +7,7 @@ When an element has an opaque background, the upper layer's `backdrop-filter: bl
 1. Under windows
 2. Use setEffects to add effect to window
 
-## screenshot
+## Screenshot
 
 ![preview](./screenshot.png)
 
