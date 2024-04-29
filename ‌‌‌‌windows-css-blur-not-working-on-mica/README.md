@@ -1,11 +1,15 @@
-# Window loses its shadow
+# Windows css blur not working on mica
 
-When setting the effect for windows on macOS, all windows except the first one will lose their shadows.
+When an element has an opaque background, the upper layer's `backdrop-filter: blur(3px);` will take effect, otherwise the element remains clearly visible.
 
 ## Reproduction conditions:
 
-1. Under macOS
+1. Under windows
 2. Use setEffects to add effect to window
+
+## screenshot
+
+![preview](./screenshot.png)
 
 ## How to start
 
