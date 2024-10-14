@@ -1,1 +1,3 @@
 Each directory contains the reproduction code for each type of Tauri bug, **TO BE CONTINUED**...
+
+![image](https://github.com/user-attachments/assets/a0bf1531-716b-44bd-9309-f4e7094dde8e)
